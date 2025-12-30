@@ -27,24 +27,7 @@
 #define EXTRA 4
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <32 31>;
-        };
-
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <27 33>;
-        };
-
-        esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <25 41>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -65,8 +48,8 @@
 &kp GRAVE       &kp N1  &kp N2          &kp N3            &kp N4       &kp N5                                      &kp N6       &kp N7       &kp N8             &kp N9           &kp N0    &kp MINUS
 &kp TAB         &kp Q   &kp W           &kp E             &kp R        &kp T                                       &kp Y        &kp U        &kp I              &kp O            &kp P     &kp NON_US_BACKSLASH
 &kp LEFT_SHIFT  &kp A   &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G                                       &kp H        &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &kp SEMI  &kp SQT
-&kp ESCAPE      &kp Z   &kp X           &kp C             &kp V        &kp B        &kp LEFT_WIN    &kp C_MUTE     &kp N        &kp M        &kp COMMA          &kp DOT          &kp FSLH  &kp EQUAL
-                        &kp LGUI        &kp LALT          &kp LCTRL    &lt 1 SPACE  &kp LCTRL       &kp BACKSPACE  &lt 2 ENTER  &kp RCTRL    &kp LALT           &kp RGUI
+&lt 3 ESCAPE    &kp Z   &kp X           &kp C             &kp V        &kp B        &kp LEFT_WIN    &kp C_MUTE     &kp N        &kp M        &kp COMMA          &kp DOT          &kp FSLH  &kp EQUAL
+                        &none           &none             &none        &lt 1 SPACE  &kp LCTRL       &kp BACKSPACE  &lt 2 ENTER  &none        &none              &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -84,11 +67,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans  &kp F1     &kp F2     &kp F3    &kp F4    &kp F5                       &kp F6          &kp F7         &kp F8          &kp F9                &kp F10                &kp F11
-&trans  &kp N1     &kp N2     &kp N3    &kp N4    &kp N5                       &kp CARET       &kp AMPERSAND  &kp ASTRK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp F12
-&trans  &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                    &kp MINUS       &kp EQUAL      &kp ASTRK       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE
-&trans  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LBRC  &kp RBRC   &trans    &trans  &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp PIPE               &trans
-                   &trans     &trans    &trans    &trans     &trans    &trans  &mo 3           &trans         &trans          &trans
+&trans  &kp F1     &kp F2         &kp F3     &kp F4                &kp F5                                   &kp F6        &kp F7        &kp F8        &kp F9      &kp F10       &kp F11
+&trans  &kp EXCL   &kp AT         &kp HASH   &kp DOLLAR            &kp PERCENT                              &kp N7        &kp N8        &kp N9        &kp MINUS   &kp SLASH     &kp F12
+&trans  &kp CARET  &kp AMPERSAND  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS    &kp ASTERISK  &kp PIPE
+&trans  &trans     &trans         &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &kp EQUAL     &trans
+                   &trans         &trans     &trans                &trans                 &trans    &trans  &kp N0        &trans        &trans        &trans
             >;
 
             sensor-bindings =
